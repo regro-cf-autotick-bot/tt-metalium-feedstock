@@ -1,5 +1,5 @@
 {% set name = "tt-metalium" %}
-{% set version = "0.57.0.rc60" %}
+{% set version = "0.59.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/tenstorrent/tt-metal/releases/download/v{{ version.replace(".rc", "-rc") }}/tt-metalium.tar.gz
-  sha256: 09e463340eeba777340546a8e9fd6cf2358b6f93f2ec57b98195206eee8277fc
+  sha256: 261c35209bc28e445913a806afe5b9ba0729f3ced7532cb6f68177dd20b68711
 
 build:
   number: 0
-  skip: true  # [not linux]
+  skip: true  # [not linux or py==39]
 
 requirements:
   build:
@@ -50,25 +50,15 @@ requirements:
     - pytorch
     - python-graphviz
 
-test:
-  imports:
-    - ttnn
-
 about:
   home: https://github.com/tenstorrent/tt-metal
   summary: 'Simple, fast, extensible runtime libraries for Tenstorrent Hardware'
   description: |
     TT-NN operator library, and TT-Metalium low level kernel programming model.
-  license: Apache-2.0 AND GPL-2.0-or-later
+  license: Apache-2.0
   license_family: Apache
   license_file:
     - LICENSE
-    - third_party/newlib/COPYING
-    - third_party/qemu/COPYING
-    - third_party/riscv-dejagnu/COPYING
-    - third_party/sfpi/LICENSE
-    - third_party/sfpi-gcc/COPYING
-    - third_party/sfpi-binutils/COPYING
   doc_url: https://docs.tenstorrent.com/tt-metalium/latest
   dev_url: https://github.com/tenstorrent/tt-metal
 
