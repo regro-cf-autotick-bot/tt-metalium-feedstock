@@ -1,5 +1,5 @@
 {% set name = "tt-metalium" %}
-{% set version = "0.59.0" %}
+{% set version = "0.64.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tenstorrent/tt-metal/releases/download/v{{ version.replace(".rc", "-rc") }}/tt-metalium.tar.gz
-  sha256: 261c35209bc28e445913a806afe5b9ba0729f3ced7532cb6f68177dd20b68711
+  sha256: 5f5f313a9dd59c344d4bd9beda4f0ec81e0c5d8cce6466b1f3cb006e67d14cc6
 
 build:
   number: 0
