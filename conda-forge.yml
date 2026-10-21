@@ -1,10 +1,11 @@
-azure:
-  free_disk_space: true
-  settings_linux:
-    swapfile_size: 10GiB
 github:
   branch_name: main
   tooling_branch_name: main
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
+workflow_settings:
+  free_disk_space: quick
+  pagefile_size:
+    - os: linux
+      value: 10
